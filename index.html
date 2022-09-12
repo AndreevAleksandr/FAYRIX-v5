@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="favicon/site.webmanifest">
+
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Mukta:wght@200;400&display=swap" rel="stylesheet">
+
+	<!--    Bootstrap CSS-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!--    CSS-->
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+	<title>Form Fayrix - JAST CLICK</title>
+
+</head>
+<body>
+
+	<div class="container">
+		
+		<div class="header">
+			<div class="container">
+				<div class="row -col-centered">
+					<div class="col-lg-7 col-md-10 col-12">
+					
+						<div class="title-head">
+							<span class="title_head">Just click</span><br>
+							<span class="title_head">We will find the right job for you</span>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="form_content">
+			<div class="container">
+				<div class="row -col-centered">
+					<div class="col-lg-7 col-md-10 col-12">
+					
+						<form id="form-contact_users" method="POST" class="contact-form" autocomplete="off" enctype="multipart/form-data">
+
+							<div class="preloader"></div>
+							<p class="contact-form__message"></p>
+						
+							<div class="pop-up_list">
+								<label class="up_name">Position</label>
+								<select name="position" required />
+									<option>Developer</option>
+									<option>Data Science</option>
+									<option>Desing & UX</option>
+									<option>DevOps</option>
+									<option>QA / Manual</option>
+									<option>QA / Auto</option>
+									<option>Product Management</option>
+								</select>
+								<br>
+								<label class="up_name">Grade</label>
+								<select name="grade" required />
+									<option>Junior</option>
+									<option>Middle</option>
+									<option>Senior</option>
+									<option>Teanlead / Techlead</option>	
+								</select>
+								<br>
+								<label class="up_name">Level of English</label>
+								<select name="lvl_english" required />
+									<option>A-1 / A-2</option>
+									<option>B-1 / B-2</option>
+									<option>C-1 / C-2</option>	
+								</select>	
+							</div>
+						
+							<hr>
+						
+							<div class="form_contact">
+								<label class="title_contact">Drop us a line, and our HR will contact you</label>
+								<input type="email" name="email" class="contact-form__input" placeholder="e-mail">
+								<input type="text" name="link" placeholder="Telegram / What'sApp" class="contact-form__input">
+							</div>
+
+							<div class="form_comment">
+								<label class="title_comment">Have any questions?<br>Wants to share something, you con do it here:</label>
+								<textarea name="comment" class="form-control"></textarea>
+							</div>
+
+							<div class="contact-form__input-wrapper">
+								<input type="file" accept="application/pdf" name="files[]" id="contact-form__input_file" class="contact-form__input contact-form__input_file" multiple>
+								<label for="contact-form__input_file" class="input__file-button">
+									<span class="input__file-icon-wrapper"><img	class="input__file-icon" src="./img/down_resum.svg" width="35px" alt="download-icon"></span>
+									<span class="input__file-button-text">You can download<br>your CV here [.PDF]</span>
+								</label>
+							</div>
+						
+							<div class="check_test">
+								<input type="checkbox" name="test_task">Are you ready to do the test task?
+							</div>
+
+							<div class="privacy_policy">
+								<input type="checkbox" name="privacy_policy">By clicking, you agree to the <a href="#openModal" class="privacy_link">Privacy Policy</a>
+							</div>
+
+							<div id="openModal" class="modalDialog">
+								<div>
+									<a href="#close" title="Close" class="close">X</a>
+									<h2>Privacy Policy</h2>
+									<p>Consent to the processing of personal data 
+											By filling out this form, you provide your consent in favor of Fayrix Software LTD in accordance with the legislation of Israel to carry out the following actions with all personal and other data placed by you: systematization, storage, clarification (updating or modification), use, distribution, provision, depersonalization, blocking and destruction, in order to consider your candidacy for involvement in the performance of work / provision of services, participation in relevant surveys and research; receiving the results of research by e-mail; initiation of the survey theme; provision of expert opinions for publications. This consent is provided without limiting the period of processing of personal data, but until the user withdraws consent to the processing of his personal data.</p>
+								</div>									
+							</div>
+
+							<button type="submit" class="contact-form__button">Submit</button>
+
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>	
+	</div>
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="/telegramform/js/telegramform.js"></script>
+
+	<script>
+    let inputs = document.querySelectorAll('.contact-form__input_file');
+    Array.prototype.forEach.call(inputs, function (input) {
+      let label = input.nextElementSibling,
+        labelVal = label.querySelector('.input__file-button-text').innerText;
+  
+      input.addEventListener('change', function (e) {
+        let countFiles = '';
+        if (this.files && this.files.length >= 1)
+          countFiles = this.files.length;
+  
+        if (countFiles)
+          label.querySelector('.input__file-button-text').innerText = 'Resume uploaded: ' + countFiles;
+        else
+          label.querySelector('.input__file-button-text').innerText = labelVal;
+      });
+    });
+    </script>
+
+</body>
+</html>
